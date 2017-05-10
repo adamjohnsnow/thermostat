@@ -3,15 +3,52 @@ body {
   text-align: center;
 }
 
-div.temp-display {
-  border-color:#cccccc;
-  border-style:solid;
-  border-width:1px;
-  background: #cedadd;
+div.full-display {
+  border-color:#4a5359;
+  border-style: solid;
+  border-width: 3px;
+  background: #bff442;
   margin:  0 auto;
   padding: 10px 20px 20px 20px;
   font-family: 'LCD14';
-  font-size: 400%;
+  color: #4a5359;
   min-width: 164px;
   max-width: 164px;
+}
+
+div.temperature-display {
+  font-size: 400%;
+  padding: 0px 20px 0px 20px;
+}
+
+.control-buttons {
+  border-color:#4a5359;
+  border-width:3px;
+  margin: 0 auto;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  font-size: 100%;
+}
+.control-button-large {
+  border-color:#4a5359;
+  border-width:3px;
+  margin: 0 auto;
+  min-width: 124px;
+  max-width: 124px;
+  min-height: 40px;
+  max-height: 40px;
+  font-size: 100%;
+}
+
+.control-button-wide {
+  border-color:#4a5359;
+  border-width:3px;
+  margin: 0 auto;
+  min-width: 210px;
+  max-width: 210px;
+  min-height: 40px;
+  max-height: 40px;
+  font-size: 100%;
 }

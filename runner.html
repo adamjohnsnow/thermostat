@@ -6,14 +6,38 @@
 </head>
 
 <body>
+  <div class='full-display'>
+    <div class="energy-display">
+      | AT MAX TEMP |
+    </div>
 
-<div class="temp-display">
-20&deg<sup>c</sup>
+    <div class="temperature-display">
+      20&deg
+    </div>
+
+    <div class="energy-display">
+      MEDIUM-USAGE<br>
+      POWER-SAVE: ON
+    </div>
+  </div>
+
+
+
+
+
+<div><br>
+  <form>
+    <input class='control-buttons' type='button' id='up' value='+'>
+    <input class='control-button-large' type='button' id='reset' value='RESET'>
+    <input class='control-buttons' type='button' id='down' value='-'><p>
+    <input class='control-button-wide' type='button' id='power-save' value='POWER-SAVE'>
+  </form>
 </div>
 
 <script src="src/Thermostat.js"></script>
 <script src="src/PowerSave.js"></script>
 <script src="src/EnergyUsage.js"></script>
+
 </body>
 
 </html>
