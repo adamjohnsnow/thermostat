@@ -5,7 +5,7 @@ function Thermostat(powerSave = new PowerSave()) {
 }
 
 Thermostat.prototype.temperatureUp = function () {
-  this.temperature += 1;
+  if ( !this._isAtMaximum()) { this.temperature += 1 }
 }
 
 Thermostat.prototype.temperatureDown = function () {
@@ -14,6 +14,10 @@ Thermostat.prototype.temperatureDown = function () {
 
 Thermostat.prototype._isAtMinimum = function () {
   return this.temperature == this.minTemperature;
+}
+
+Thermostat.prototype._isAtMaximum = function () {
+  return this.temperature == this.powerSave.maxTemperature;
 }
 
 Thermostat.prototype.resetTemperature = function() {

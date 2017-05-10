@@ -1,6 +1,7 @@
 describe('Thermostat', function() {
 
   var thermostat;
+  var fakePowerSave;
 
   beforeEach(function() {
     fakePowerSave = {isOn: true, maxTemperature: 25}
@@ -19,6 +20,12 @@ describe('Thermostat', function() {
     it('goes up by one degree', function() {
       thermostat.temperatureUp();
       expect(thermostat.temperature).toEqual(21);
+    })
+
+    it('cannot go above max temperature', function() {
+      thermostat.temperature = 25;
+      thermostat.temperatureUp();
+      expect(thermostat.temperature).toEqual(25);
     })
   })
 
