@@ -1,0 +1,17 @@
+body {
+  font: 15px Georgia, sans-serif;
+  text-align: center;
+}
+
+div.temp-display {
+  border-color:#cccccc;
+  border-style:solid;
+  border-width:1px;
+  background: #cedadd;
+  margin:  0 auto;
+  padding: 10px 20px 20px 20px;
+  font-family: 'LCD14';
+  font-size: 400%;
+  min-width: 164px;
+  max-width: 164px;
+}
