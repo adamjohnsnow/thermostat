@@ -23,3 +23,7 @@ Thermostat.prototype._isAtMaximum = function () {
 Thermostat.prototype.resetTemperature = function() {
   this.temperature = 20;
 }
+
+Thermostat.prototype.checkUsage = function () {
+  return new EnergyUsage().usageIndicator(this.temperature);
+}
