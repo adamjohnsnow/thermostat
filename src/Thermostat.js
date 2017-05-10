@@ -4,7 +4,6 @@ function Thermostat(powerSave = new PowerSave()) {
   this.powerSave = powerSave;
 }
 
-
 Thermostat.prototype.temperatureUp = function () {
   this.temperature += 1;
 }

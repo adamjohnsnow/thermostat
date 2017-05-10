@@ -16,6 +16,11 @@ describe('PowerSave', function() {
       powerSave.turnOff();
       expect(powerSave.isOn).toEqual(false);
     })
+
+    it('can set the max temp to 32 degrees when isOn = false', function() {
+      powerSave.turnOff();
+      expect(powerSave.maxTemperature).toEqual(32);
+    })
   })
 
   describe('turning on', function() {
@@ -23,6 +28,10 @@ describe('PowerSave', function() {
       powerSave.isOn = false;
       powerSave.turnOn();
       expect(powerSave.isOn).toEqual(true);
+    })
+
+    it('can set the max temp to 25 degrees when isOn = true', function() {
+      expect(powerSave.maxTemperature).toEqual(25);
     })
   })
 })

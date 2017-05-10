@@ -3,7 +3,7 @@ describe('Thermostat', function() {
   var thermostat;
 
   beforeEach(function() {
-    fakePowerSave = {isOn: true}
+    fakePowerSave = {isOn: true, maxTemperature: 25}
     thermostat = new Thermostat(fakePowerSave);
   })
 
