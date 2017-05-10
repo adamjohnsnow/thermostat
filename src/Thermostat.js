@@ -1,7 +1,9 @@
-function Thermostat() {
+function Thermostat(powerSave = new PowerSave()) {
   this.resetTemperature();
   this.minTemperature = 10;
+  this.powerSave = powerSave;
 }
+
 
 Thermostat.prototype.temperatureUp = function () {
   this.temperature += 1;
