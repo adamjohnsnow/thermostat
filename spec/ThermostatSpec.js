@@ -41,4 +41,14 @@ describe('Thermostat', function() {
       expect(thermostat.minTemperature).toEqual(10);
     })
   })
+
+  describe('#resetTemperature', function() {
+
+    it('resets temperature to 20', function() {
+      thermostat.temperature = 10;
+      thermostat.resetTemperature();
+      expect(thermostat.temperature).toEqual(20);
+    })
+
+  })
 })

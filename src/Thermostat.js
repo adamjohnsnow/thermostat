@@ -1,5 +1,5 @@
 function Thermostat() {
-  this.temperature = 20;
+  this.resetTemperature();
   this.minTemperature = 10;
 }
 
@@ -13,4 +13,8 @@ Thermostat.prototype.temperatureDown = function () {
 
 Thermostat.prototype._isAtMinimum = function () {
   return this.temperature == this.minTemperature;
+}
+
+Thermostat.prototype.resetTemperature = function() {
+  this.temperature = 20;
 }
