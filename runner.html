@@ -9,18 +9,18 @@
   <script src="./src/EnergyUsage.js"></script>
   <script src="./jquery.js"></script>
 
+
 </head>
 
 <body>
   <div class="big-border">
   <div class="brand">
-  makerstat <img src="./public/flame.png" height="25"><p>
+  makerstat <img src="./public/flame.gif-c200" height="25"><p>
 </div>
   <div class='full-display' id='full-display'>
-    <div class="energy-display">
-      | AT MAX TEMP |
+    <div class="energy-display" id="weather">
+      | weather |
     </div>
-
     <div id="temperature" class="temperature-display">
       xx
     </div>
@@ -34,7 +34,7 @@
   </div>
 
 <div><br>
-  <form>
+  <form id="controls">
     <input class='control-buttons' type='button' id='up' value='+'>
     <input class='control-button-large' type='button' id='reset' value='RESET'>
     <input class='control-buttons' type='button' id='down' value='-'><p>

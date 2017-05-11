@@ -25,4 +25,5 @@ describe('Feature Test', function() {
   it('has high-usage', function() {
     expect(thermostat.checkUsage()).toEqual('high-usage');
   })
+
 })
