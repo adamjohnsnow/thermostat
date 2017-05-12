@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="./public/style.css">
   <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/lcd" type="text/css"/>
+  <link rel="icon" href="./public/flame.gif-c200">
   <script src="./lib/jquery-3.2.1.min.js"></script>
   <script src="./src/Thermostat.js"></script>
   <script src="./src/PowerSave.js"></script>
@@ -18,13 +19,27 @@
   makerstat <img src="./public/flame.gif-c200" height="25"><p>
 </div>
   <div class='full-display' id='full-display'>
-    <div class="energy-display" id="weather">
-      | weather |
+
+    <div class="dropdown" >
+      <button class="dropbtn" id="weatherButton">
+        <div class="energy-display" id="weather">
+            | weather |
+          </div>
+          <div class="energy-display" id="weatherIcon">
+            xx
+          </div>
+        </button>
+      <div class="dropdown-content" id="cities">
+        <a id="lon">London</a>
+        <a id="par">Paris</a>
+        <a>Tokyo</a>
+        <a>Sydney</a>
+        <a>New York</a>
+      </div>
     </div>
     <div id="temperature" class="temperature-display">
       xx
     </div>
-
     <div class="energy-display" id="energyUsage">
       xxxxx
     </div>
@@ -32,20 +47,16 @@
       xx
     </div>
   </div>
-
 <div><br>
-  <form id="controls">
-    <input class='control-buttons' type='button' id='up' value='+'>
+  <form id="cites.flyout">
+    <input class='control-buttons' type='button' id='down' value='-'>
     <input class='control-button-large' type='button' id='reset' value='RESET'>
-    <input class='control-buttons' type='button' id='down' value='-'><p>
+    <input class='control-buttons' type='button' id='up' value='+'><p>
     <input class='control-button-wide' type='button' id='power-save' value='POWER-SAVE'>
   </form>
 </div>
 
 </div>
-<script src="src/Thermostat.js"></script>
-<script src="src/PowerSave.js"></script>
-<script src="src/EnergyUsage.js"></script>
 
 </body>
 
