@@ -1,6 +1,7 @@
-var thermostat = thermostat || new Thermostat()
-var string = "ON"
 
+
+  var thermostat = thermostat || new Thermostat()
+  var string = "ON"
 
 $.get("http://api.openweathermap.org/data/2.5/forecast?id=2643743&APPID=35b2b723ca44019829cb5e1c2ce4e8d3&units=metric", function(weather) {
   $("#weather").html('London: ' + Math.round(weather.list[0].main.temp) + "&deg ")
@@ -10,12 +11,26 @@ $.get("http://api.openweathermap.org/data/2.5/forecast?id=2643743&APPID=35b2b723
 
 $(function () {
 
+  $.get("https://protected-reaches-67313.herokuapp.com/thermostat", function(savedThermostat) {
+      savedThermostat = (savedThermostat)
+      updateThermostat(savedThermostat)
+      resetDisplay();
+    });
+
   function resetDisplay() {
     $("#temperature").html(thermostat.temperature + "&deg")
     $("#powerSave").html("POWER-SAVE: " + string);
     $("#energyUsage").text((thermostat.checkUsage()).toUpperCase())
     $("#full-display").css('background', displayColour())
     $("#weatherButton").css('background', displayColour())
+
+    $.ajax('https://protected-reaches-67313.herokuapp.com/save_temperature',
+        {
+        temperature: thermostat.temperature,
+        powerSave: thermostat.powerSave.isOn
+          }
+        )
+
   }
 
   $("#down").click(function() {
@@ -52,6 +67,11 @@ function changeCity(city) {
   };
   var city = city
   console.log(cityCodes[city]);
+}
+
+function updateThermostat(savedThermostat) {
+  thermostat.temperature = savedThermostat.temperature
+  thermostat.powerSave = thermostat.powerSave.isOn
 }
 
 function displayColour() {
