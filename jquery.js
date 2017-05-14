@@ -24,12 +24,8 @@ $(function () {
     $("#full-display").css('background', displayColour())
     $("#weatherButton").css('background', displayColour())
 
-    $.ajax('https://protected-reaches-67313.herokuapp.com/save_temperature',
-        {
-        temperature: thermostat.temperature,
-        powerSave: thermostat.powerSave.isOn
-          }
-        )
+    $.post('https://protected-reaches-67313.herokuapp.com/save_thermostat?temperature=' + thermostat.temperature + '&powerSave=' + thermostat.powerSave.isOn,{
+    });
 
   }
 
@@ -71,7 +67,7 @@ function changeCity(city) {
 
 function updateThermostat(savedThermostat) {
   thermostat.temperature = savedThermostat.temperature
-  thermostat.powerSave = thermostat.powerSave.isOn
+  thermostat.powerSave.isOn = savedThermostat.powerSave
 }
 
 function displayColour() {
