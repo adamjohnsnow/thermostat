@@ -11,7 +11,7 @@ $.get("http://api.openweathermap.org/data/2.5/forecast?id=2643743&APPID=35b2b723
 
 $(function () {
 
-  $.get("https://protected-reaches-67313.herokuapp.com/thermostat", function(savedThermostat) {
+  $.get("https://snowdonia-remote-api.herokuapp.com/thermostat", function(savedThermostat) {
       savedThermostat = (savedThermostat)
       updateThermostat(savedThermostat)
       resetDisplay();
@@ -24,7 +24,7 @@ $(function () {
     $("#full-display").css('background', displayColour())
     $("#weatherButton").css('background', displayColour())
 
-    $.post('https://protected-reaches-67313.herokuapp.com/save_thermostat?temperature=' + thermostat.temperature + '&powerSave=' + thermostat.powerSave.isOn,{
+    $.post('https://snowdonia-remote-api.herokuapp.com/save_thermostat?temperature=' + thermostat.temperature + '&powerSave=' + thermostat.powerSave.isOn,{
     });
 
   }
